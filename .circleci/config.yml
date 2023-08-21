@@ -25,4 +25,4 @@ workflows:
   test-workflow:
     jobs:
       - print-a-message:
-        message: Hello! Kiran Reddy
+          message: Hello! Kiran Reddy
