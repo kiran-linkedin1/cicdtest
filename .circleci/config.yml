@@ -11,9 +11,9 @@ jobs:
     docker:
       - image: cimg/base:2022.03
       # add parameters to the job
-      parameters:
-        message:
-          type: string
+    parameters:
+      message:
+        type: string
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
