@@ -5,7 +5,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - run:
-        - name: "Test Practice Variable"
+          name: "Test Practice Variable"
           command: echo $PRACTICE_VARIABLE
 workflows:
   test_variables_flow:
