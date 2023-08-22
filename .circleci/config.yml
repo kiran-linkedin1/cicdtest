@@ -3,7 +3,7 @@ jobs:
   test_variables:
     docker:
       -image: cimg/base:stable
-    step:
+    steps:
       - run:
         - name: "Test Practice Variable"
           command: echo $PRACTICE_VARIABLE
@@ -13,4 +13,3 @@ workflows:
       - test_variables:
           context:
             - practice_context
-       
