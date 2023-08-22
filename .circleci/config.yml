@@ -1,27 +1,14 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/configuration-reference
 version: 2.1
-orbs:
-  slack: circleci/slack@4.1
-
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/configuration-reference/#jobs
-
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/configuration-reference/#workflows
+jobs:
+  Test_Variables:
+    docker:
+    	-image: cimg/base:stable
+    step:
+    	run:
+    	  - name: "Test Practice Variable"
+    	    command: echo $PRACTICE_VARIABLE
 workflows:
-  on-hold-example:
+  test_variables:
     jobs:
-      - my_test_job
-      - slack/on-hold:
-          context: slack-secrets
-          requires:
-            - my_test_job
-      - pause_workflow:
-          requires:
-            - my_test_job
-            - slack/on-hold
-          type: approval
-      - my_deploy_job:
-          requires:
-            - pause_workflow
+      - Test_Variables
+       
