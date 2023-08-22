@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test_variables:
     docker:
-      -image: cimg/base:stable
+      - image: cimg/base:stable
     steps:
       - run:
         - name: "Test Practice Variable"
