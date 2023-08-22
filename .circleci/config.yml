@@ -1,14 +1,16 @@
 version: 2.1
 jobs:
-  Test_Variables:
+  test_variables:
     docker:
       -image: cimg/base:stable
     step:
-      run:
+      - run:
         - name: "Test Practice Variable"
           command: echo $PRACTICE_VARIABLE
 workflows:
-  test_variables:
+  test_variables_flow:
     jobs:
-      - Test_Variables
+      - test_variables:
+          context:
+            - practice_context
        
